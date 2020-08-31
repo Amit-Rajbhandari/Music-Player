@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-searchbar (search)="search(query.value)" #query></ion-searchbar>
+  <div padding>
+    <ion-segment [(ngModel)]="tabValue">
+      <ion-segment-button value="latestSongs">
+        Latest Releases
+      </ion-segment-button>
+      <ion-segment-button value="playlist">
+        My Playlist
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="tabValue">
+    <ion-list *ngSwitchCase="'latestSongs'">
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'playlist'">
+      <ion-item>
+
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-card *ngFor="let item of tracks">
+    <div>
+      <ion-item>
+        <h2>{{item.name}}</h2>
+        <p>{{item.album.name}}</p>
+        <button ion-button clear item-right icon-only (click)="addToPlaylist(item)">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-item>
+      <img src="{{track.album.images[0].url}}" />
+    </div>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-content>
+    <div class="startup-pages">
+        <span class="logo-main">
+            <img src="./assets/images/icons/icon-headphone.png" alt="">
+        </span>
+        <form>
+            <ion-item-group class="group-form-signin">
+                <ion-item>
+                    <ion-input type="text" placeholder="Username"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="Email" placeholder="Email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="password" placeholder="Password"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="password" placeholder="Confirm Password"></ion-input>
+                </ion-item>
+                <button class="btn-login" ion-button block round>Sign up</button>
+            </ion-item-group>
+            <ion-item-group class="startup-foot">
+                <button ion-button clear (tap)="goToSignin()">Sign in</button>
+            </ion-item-group>
+        </form>
+    </div>
+</ion-content>

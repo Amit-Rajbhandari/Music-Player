@@ -1,0 +1,22 @@
+page-home {
+    .playing {
+        background: rebeccapurple;
+        color: #fff;
+    }
+    .scroll-content {
+        padding-top: 98px !important;
+    }
+    .song-listing-option {
+        position: relative;
+        margin-top: 56px;
+        background-color: #fff;
+        z-index: 2;
+    }
+    ion-header[style*="margin-top: 0px;"]  + ion-segment.song-listing-option {
+        margin-top: 56px !important;
+    }
+    ion-fab.floating-shuffle {
+        position: fixed;
+        bottom: 8rem;
+    }
+}

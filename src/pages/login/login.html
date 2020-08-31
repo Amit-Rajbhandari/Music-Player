@@ -1,0 +1,34 @@
+<ion-content>
+    <div class="startup-pages">
+        <span class="logo-main">
+            <img src="./assets/images/icons/icon-headphone.png" alt="">
+        </span>
+        <div>
+            <!-- <div text-center class="social">
+                <span class="login-google" (tap)="openLinkedIn()">
+                    <img src="assets/images/login/icon-linkedin.svg">
+                    <span>Google</span>
+                </span>
+                <span class="login-facebook">
+                    <img src="assets/images/login/icon-facebook.svg">
+                    <span>Facebook</span>
+                </span>
+            </div> -->
+            <form>
+                <ion-item-group class="group-form-signin">
+                    <ion-item>
+                        <ion-input type="text" placeholder="Username"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input type="password" placeholder="Password"></ion-input>
+                    </ion-item>
+                    <button class="btn-login" ion-button block round>Sign in</button>
+                </ion-item-group>
+                <ion-item-group class="startup-foot">
+                    <button ion-button clear (tap)="forgotPass()">Forgot Password?</button>
+                    <button ion-button clear (tap)="signUp()">Don't have a account? Sign Up</button>
+                </ion-item-group>
+            </form>
+        </div>
+    </div>
+</ion-content>

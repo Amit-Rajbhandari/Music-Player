@@ -1,0 +1,40 @@
+<ion-header [scrollHide]="headerScrollConfig" [scrollContent]="pageContent">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-segment class="song-listing-option" [(ngModel)]="tabValue" [scrollHide]="scrollAlong" [scrollContent]="pageContent">
+  <ion-segment-button value="songs">
+    Songs
+  </ion-segment-button>
+  <ion-segment-button value="albums">
+    Albums
+  </ion-segment-button>
+</ion-segment>
+<ion-content [ngSwitch]="tabValue" #pageContent fullscreen>
+  <div *ngSwitchCase="'songs'">
+    <button ion-item (tap)="listFiles()">Refresh</button>
+    <ion-list>
+      <button *ngFor="let item of tracks; let i = index" ion-item (tap)="item.playing ? pause() : play(item, i)" [ngClass]="item.playing ? 'playing' : ' ' ">
+        {{item.songName}}
+      </button>
+    </ion-list>
+
+    <ion-fab right bottom class="floating-shuffle" [ngSwitch]="tabValue == songs">
+      <button (tap)="shuffle()" color="light" ion-button color="light">
+        <ion-icon name="ios-shuffle-outline"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+  <div *ngSwitchCase="'albums'">
+    <ion-list>
+      <ion-item>
+        Album
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<music-drawer [tracks]="tracks" [options]="options" [ngClass]="playClass ? '' : 'drawer-hidden'"></music-drawer>

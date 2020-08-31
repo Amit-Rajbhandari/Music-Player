@@ -1,0 +1,84 @@
+music-drawer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0 !important;
+    background-color: #ffffff;
+    box-shadow: 0px -4px 22px -8px rgba(0, 0, 0, 0.75);
+    z-index: 10 !important;
+
+    ion-header {
+        ion-list.list {
+            margin: 0;
+        }
+        .item {
+            background-color: rgba(255, 255, 255, 1);
+            transition: .5s ease;
+            ion-thumbnail {
+                min-width: 50px;
+                min-height: 50px;
+                border-radius: 5px;
+                overflow: hidden;
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            ion-label {
+                margin: 0;
+            }
+            button.item-button {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    ion-content {
+        position: static;
+        background-size: cover;
+        .scroll-content {
+            display: flex;
+            align-items: flex-end;
+            margin-top: 0 !important;
+        }
+        ion-item.progress {
+            padding: 0;
+            min-height: initial;
+            ion-range.range {
+                padding: 0;
+                .range-slider {
+                    height: 34px;
+                }
+                ion-label { font-size: 1.1rem; }
+            }
+        }
+    }
+
+    ion-footer {
+        height: 7rem;
+        background-color: #555555;
+        ion-grid,
+        ion-row,
+        ion-col {
+            height: 100%;
+        }
+        ion-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+music-drawer.drawer-hidden {
+    display: none;
+    top: 120% !important;
+}
+
+music-drawer.open {
+    ion-header {
+        .item {
+            background-color: rgba(255, 255, 255, .7);
+        }
+    }
+}

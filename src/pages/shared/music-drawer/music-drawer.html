@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-list>
+        <ion-item>
+            <ion-thumbnail item-start>
+                <img src="{{trackMeta.cover}}">
+            </ion-thumbnail>
+            <h2>{{trackMeta.title}}</h2>
+            <p>{{trackMeta.artist}}</p>
+            <button (tap)="playingMedia ?  pause() : resume()" color="dark" ion-button clear item-end>
+                <ion-icon *ngIf="playingMedia == false" name="ios-play"></ion-icon>
+                <ion-icon *ngIf="playingMedia == true" name="ios-pause"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-header>
+<ion-content [style.background-image]="trackMeta.bgCover">
+    <ion-item class="progress">
+        <ion-range min="0" max="{{duration}}" pin="true" [(ngModel)]="position" color="secondary">
+            <ion-label range-right *ngIf="duration == -1">--:--</ion-label>
+            <ion-label range-right>{{totalDuration}}</ion-label>
+        </ion-range>
+    </ion-item>
+</ion-content>
+
+<ion-footer>
+    <ion-grid>
+        <ion-row>
+            <ion-col width="33">
+                <button (tap)="prev()" color="light" clear ion-button icon-only>
+                    <ion-icon name="ios-skip-backward-outline"></ion-icon>
+                </button>
+            </ion-col>
+
+            <ion-col width="33">
+                <button *ngIf="playingMedia == false" (tap)="resume()" color="light" clear ion-button icon-only>
+                    <ion-icon name="ios-play-outline"></ion-icon>
+                </button>
+                <button *ngIf="playingMedia == true" (tap)="pause()" color="light" clear ion-button icon-only>
+                    <ion-icon name="ios-pause-outline"></ion-icon>
+                </button>
+            </ion-col>
+
+            <ion-col width="33">
+                <button (tap)="next()" color="light" clear ion-button icon-only>
+                    <ion-icon name="ios-skip-forward-outline"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col width="33">
+                <button (tap)="shuffle()" color="light" clear ion-button icon-only>
+                    <ion-icon name="ios-shuffle-outline"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+</ion-footer>

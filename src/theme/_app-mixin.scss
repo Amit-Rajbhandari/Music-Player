@@ -1,0 +1,64 @@
+/* Background Image */
+@mixin background-image($background-url:none, $background-size: contain, $background-repeat:no-repeat, $background-position: center center) {
+  background-image: url($background-url);
+  background-size: $background-size;
+  background-repeat: $background-repeat;
+  background-position: $background-position;
+}
+
+/* Setting Position Value Horizontal center using Transform */
+@mixin transformCenterH() {
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* Setting Position Value Vertical center using Transform */
+@mixin transformCenterV() {
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@mixin transformDirection($transformD: 'H') {
+  @if $transformD == 'V'{
+    @include transformCenterV();
+  } @else {
+    @include transformCenterH();
+  }
+}
+
+/* Setting Position Value (relative,absolute,top,bottom,left,right) */
+@mixin defaultPosition($positionVal, $positionV, $positionH: 'L', $positionVvalue: 0, $positionHvalue: 0){ 
+  @if $positionVal {
+    position: $positionVal;
+  } @else {
+    position: 'relative';
+  }
+  
+  @include positionVertical($positionV, $positionVvalue);
+  @include positionHorizontal($positionH, $positionHvalue);
+}
+@mixin positionVertical($positionV, $positionVvalue) {
+  @if $positionV == 'bottom' {
+    bottom: $positionVvalue;
+  } @else {
+    top: $positionVvalue;
+  }
+}
+@mixin positionHorizontal($positionH, $positionHvalue) {
+  @if $positionH == 'left' {
+    left: $positionHvalue;
+  } @else {
+    right: $positionHvalue;
+  }
+}
+
+/* Setting Default Value for Before After */
+@mixin pseudoBeforeAfter($widthPseudo: 100%, $heightPseudo: 100%) {
+  width: $widthPseudo;
+  height: $heightPseudo;
+  content: "";
+}

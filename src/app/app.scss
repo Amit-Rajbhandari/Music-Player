@@ -1,0 +1,99 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 200;
+    src: local("Lato Light"), local("Lato-Light"), url("#{$font-path}/Lato-Light.woff") format("woff"), url("#{$font-path}/Lato-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Lato Regular"), local("Lato-Regular"), url("#{$font-path}/Lato-Regular.woff") format("woff"), url("#{$font-path}/Lato-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 600;
+    src: local("Lato Bold"), local("Lato-Bold"), url("#{$font-path}/Lato-Bold.woff") format("woff"), url("#{$font-path}/Lato-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lato";
+    font-style: italic;
+    font-weight: 200;
+    src: local("Lato Light Italic"), local("Lato-Bold-Italic"), url("#{$font-path}/Lato-LightItalic-webfont.woff") format("woff"), url("#{$font-path}/Lato-LightItalic.ttf") format("truetype");
+}
+
+/* Start Startup Page */
+
+.logo-main {
+    width: 5rem;
+    margin: 3rem auto 0;
+    display: block;
+}
+.startup-pages {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0 2rem 1rem;
+    ion-item.item {
+        background-color: transparent;
+        margin: 0 0 1rem;
+        padding: 0;
+    }
+}
+.group-form-signin {
+    width: calc(100% - 5rem);
+    margin: 0 auto 2rem;
+    input.text-input {
+        color: #fff;
+        font-weight: 300;
+    }
+    input::-webkit-input-placeholder,
+    input::-webkit-input-placeholder {
+        color: rgb(255, 255, 255);
+        opacity: 1;
+    }
+}
+.btn-login {
+    margin: 3rem 0 0;
+    text-transform: none;
+    letter-spacing: 0.08rem;
+    font-size: 1.5rem;
+}
+.startup-foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    button {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: #fff;
+        text-transform: none;
+        letter-spacing: .07rem;
+    }
+}
+/* End Startup Page */

@@ -1,0 +1,7 @@
+@import '../../theme/app-mixin';
+$login-bg: (background-url: '../assets/images/bg/login-bg.png', background-size: cover);
+page-login {
+    ion-content.content {
+        @include background-image($login-bg...);
+    }
+}
